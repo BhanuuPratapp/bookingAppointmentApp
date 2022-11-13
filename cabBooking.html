@@ -104,16 +104,16 @@
                         } )
                         */
                     var parentNode = document.getElementById('listofusers');
-                    var childNode = `<li id='${users.id}'> ${users.name} ${users.email} <button onclick=deleteUser('${users.id}')> Delete User </button> <button onclick=editUser('${users.id}','${users.name}')>Edit User</button></li>`;
+                    var childNode = `<li id='${users.id}'> ${users.name} ${users.email} <button onclick=deleteUser('${users.id}')> Delete User </button> <button onclick=editUser('${users.name}','${users.email}','${users.id}')>Edit User</button></li>`;
                   parentNode.innerHTML = parentNode.innerHTML + childNode;
                 }
 
-                function editUser(email1,name1){
-                    document.getElementById('email').value = email1;
-                    document.getElementById('username').value = name1;
-                    
-                    deleteUser(email1);
+                function editUser(name, email, id){
+                  document.getElementById('username').value = name;
+                    document.getElementById('email').value = email;
+                    deleteUser(id);
                 }
+
 
                 function deleteUser(userid){
                     
